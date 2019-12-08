@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block metakeywords %}
+
+{% endblock %}
+
+{% block metadescription %}
+
+{% endblock %}
+
+{% block title %}
+
+
+{% endblock %}
+
+{% block content %}
+    {% include 'includes/header.html' %}
+    <div class="container-fluid">
+        <div class="row vh-75">
+            <div class="col-12 col-md-6 offset-md-3 col-lg-4 offset-lg-4 mt-5 my-auto">
+                <form method="POST">
+
+                    {% csrf_token %}
+
+                    {{ form|crispy }}
+                    <label><input type="checkbox" class="custom-checkbox" name="remember">&nbsp;Remember me</label>
+                    <button type="submit" class="btn btn-danger w-100">Login</button>
+                    <div class="form-row mt-3">
+
+                        <h6 class="col text-center"><a href="{% url 'password_reset' %}" class="plain text-dark">Forgot Password?</a></h6>
+                    </div>
+                    <div class="form-row ">
+                        <p class="col text-center">Don't have an account? <a href="{% url 'account:signup' %}" class="plain text-dark">Signup</a></a>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+
+{% endblock %}

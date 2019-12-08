@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scallable=0, shrink-to-fit=no">
+	<meta http-equiv="X-UA-Compatible" content="IE-edge,chrome">
+    <meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate">
+    <meta name="description" content="{% block metadescription %}{% endblock %}" />
+    <meta name="keywords" content="{% block metakeywords %}{% endblock %}" />
+
+	<title>{% block title%}{% endblock %}ShipEast</title>
+	<link rel="stylesheet" href="{% static 'css/app.css' %}">
+	<link rel="shortcut icon" href="/static/media/favicon.ico" type="image/x-icon" />
+
+</head>
+<body>
+	{% block header %}{% endblock %}
+	{% block content %}
+	{% endblock %}
+	<script src="{% static 'js/' %}jquery-3.3.1.slim.min.js"></script>
+	<script src="{% static 'js/' %}bootstrap.min.js"></script>
+	<script src="{% static 'js/' %}bootstrap.bundle.min.js"></script>
+	<script src="{% static 'plugins/js/' %}feather.js"></script>
+	<script src="{% static 'js/' %}custom.js"></script>
+
+	
+</body>
+</html>

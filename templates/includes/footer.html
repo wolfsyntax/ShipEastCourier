@@ -1,0 +1,152 @@
+{% load static %}
+<footer class="container-fluid">
+
+	<div class="row footer-content-top p-2 pl-md-3 p-lg-5">
+		<div class="col-12 col-md-4">
+			<section>
+				<div class="row">
+					<div class="col">
+						<section class="mt-5">
+							<div class="row">
+								<div class="col">
+									<p >{% lorem 10 w %}</p>
+								</div>
+							</div>
+							<div class="row mt-2">
+								<div class="col-1">
+									<i class="fa fa-map-marker"></i>
+								</div>
+								<div class="col">
+									Yallah St. Thomas
+								</div>
+							</div>
+							<div class="row mt-1">
+								<div class="col-1">
+									<i class="fa fa-envelope-o"></i>
+								</div>
+								<div class="col">
+									<a href="mailto:shipeast85@gmail.com" class="plain">shipeast85@gmail.com</a>
+								</div>
+							</div>
+							<div class="row mt-1">
+								<div class="col-1">
+									<i class="fa fa-phone"></i>
+								</div>
+								<div class="col">
+									<p >+1876-891-2375</p>
+								</div>
+							</div>
+							<div class="row mt-1">
+								<div class="col-1">
+									<i class="fa fa-clock-o"></i>
+								</div>
+								<div class="col">
+									<p >+1876-891-2375</p>
+								</div>
+							</div>
+						</section>
+					</div>
+				</div>
+			</section>
+		</div>
+		<div class="col">
+			<section>
+				<div class="row">
+					<div class="col-12 col-lg-6">
+						<section class="p-0 pl-md-3 p-lg-5">
+							<div class="row mt-2">
+								<ul class="navbar navbar-nav px-0 mx-0">
+									<p class="text-uppercase" style="position: relative; left: -10px !important;">SERVICES</p>
+									<li class="nav-item ml-2">
+										<a href="#" class="nav-link row justify-content-start px-0 py-2 m-0">
+											<i class="fa fa-ship col-1"></i>
+											<span class="col">Sea</span>
+										</a>
+									</li>
+									<li class="nav-item ml-2">
+										<a href="#" class="nav-link row justify-content-start px-0 py-2 m-0">
+											<i class="fa fa-plane col-1"></i>
+											<span class="col">Air</span>
+										</a>
+									</li>
+									<li class="nav-item ml-2">
+										<a href="#" class="nav-link row justify-content-start px-0 py-2 m-0">
+											<i class="fa fa-truck col-1"></i>
+											<span class="col">Road</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</section>
+					</div>
+					<div class="col-12 col-lg-6">
+						<section class="p-2 pl-md-3 p-lg-5">
+							<div class="row mt-2">
+								<div class="social-links px-2 text-left">
+									<div class="row">
+										<div class="col">
+											<h6 class="text-uppercase">Recent Posts</h6>
+										</div>
+									</div>
+
+									<div class="row d-flex">
+										<div class="col">
+											<ul class="nav mt-3 " style="position: relative; left: -60px">
+												<li class="item">
+													<div class="media">
+														<div class="media-left">
+															<a href="#">
+																<img class="media-object" src="{% static 'media/' %}user.png" alt="post-thumb" width="24px" height="24px">
+															</a>
+														</div>
+														<div class="media-body ml-2">
+															<p class="media-heading font-weight-bold"><a href="#">Post Title</a></p>
+															<p>{% lorem 10 w %}</p>
+								                  		</div>
+								                	</div>
+								              	</li>
+								              	<li class="item">
+													<div class="media">
+														<div class="media-left">
+															<a href="#">
+																<img class="media-object" src="{% static 'media/' %}user.png" alt="post-thumb" width="24px" height="24px">
+															</a>
+														</div>
+														<div class="media-body ml-2">
+															<p class="media-heading font-weight-bold"><a href="#">Post Title</a></p>
+															<p>{% lorem 10 w %}</p>
+								                  		</div>
+								                	</div>
+								              	</li>
+										              
+								            </ul>
+										        
+										</div>
+									</div>
+								</div>
+							</div>
+						</section>
+					</div>
+				</div>
+			</section>
+		</div>
+	</div>
+	<div class="row footer-content-bottom">
+		<div class="col-12 col-md-7 text-center text-md-left mb-3 mb-md-0">
+			&copy; Copyright {% now "Y" %}. All Rights Reserved by <a href="#" class="d-inline-block px-0 plain text">ShipEast</a>
+		</div>
+		<div class="col">
+			<ul class="nav justify-content-center justify-content-md-end">
+				<li class="nav-item">
+					<a href="{% url 'sitemap:home' %}" class="nav-link">Home</a>
+				</li>
+				<li class="nav-item nav-item">
+					<a href="{% url 'sitemap:about' %}" class="nav-link">About</a>
+				</li>
+				<li class="nav-item nav-item">
+					<a href="{% url 'sitemap:contact' %}" class="nav-link">Contact</a>
+				</li>
+			</ul>	
+		</div>
+	</div>
+</footer>
