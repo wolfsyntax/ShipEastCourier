@@ -79,10 +79,11 @@ WSGI_APPLICATION = 'ShipEast.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',#'django.db.backends.sqlite3',#'django.db.backends.mysql',#
-        'NAME': 'ship_east', #'ship_east',#os.path.join(BASE_DIR, 'db.sqlite3'), #
-        'USER': 'root',
-        'PASSWORD': '',
+        'ENGINE': 'django.db.backends.sqlite3',#'django.db.backends.sqlite3',#'django.db.backends.mysql',#
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'), # 'realmad', ship_east',#os.path.join(BASE_DIR, 'db.sqlite3'), #
+        #'USER': 'root',
+        #'PASSWORD': '', #'micantboda123',
+        #'HOST': 'realmad.mysql.pythonanywhere-services.com',
     }
 #    'server': {
 #
@@ -164,7 +165,7 @@ PASSWORD_RESET_TIMEOUT_DAYS = 1
 # Authentication
 LOGIN_URL = '/login/'
 LOGIN_REDIRECT_URL = "/"
-LOGOUT_REDIRECT_URL = ""
+LOGOUT_REDIRECT_URL = "/"
 
 from django.contrib import messages
 

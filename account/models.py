@@ -15,10 +15,16 @@ PARISH = (
 )
 
 class Profile(models.Model):
+
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     date_of_birth = models.DateField(blank=True, null=True)
     photo = models.ImageField(upload_to='users/%Y/%m/%d', blank=True)
+    trn = models.CharField(max_length=10)
     address = models.CharField(max_length=254)
+
+    district = models.CharField(max_length=254)
+    #country = models.CharField(max_length=254)
+    
     parish = models.CharField(choices=PARISH, max_length=15)
 	
     description = models.CharField(max_length=255, blank=True)

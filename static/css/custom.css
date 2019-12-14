@@ -19,6 +19,11 @@
     float: left;
 }
 
+.active-danger {
+    background: #c62f3e !important;
+    height: 100%;
+}
+
 .plain {
 	text-decoration: none !important;
 }

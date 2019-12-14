@@ -72,27 +72,27 @@
 		<div class="collapse navbar-collapse" id="navbarNav">
         
 			<ul class="navbar-nav">
-				<li class="nav-item active">
-					<a class="nav-link text-white active" href="{% url 'sitemap:home' %}">Home <span class="sr-only">(current)</span></a>
+				<li class="nav-item {% if request.path == '/'%}active-danger{% endif %}">
+					<a class="nav-link text-white" href="{% url 'sitemap:home' %}">Home<span class="sr-only">(current)</span></a>
 				</li>
 				
-				<li class="nav-item">
-					<a class="nav-link text-white " href="{% url 'sitemap:about' %}">About</a>
+				<li class="nav-item {% if request.path == '/about'%}active-danger{% endif %}">
+					<a class="nav-link text-white" href="{% url 'sitemap:about' %}">About</a>
 				</li>
 
-				<li class="nav-item">
+				<li class="nav-item {% if request.path == '/how-it-works'%}active-danger{% endif %}">
 					<a class="nav-link text-white " href="{% url 'sitemap:guide' %}">How it Works</a>
 				</li>
 
-				<li class="nav-item">
+				<li class="nav-item {% if request.path == '/service'%}active-danger{% endif %}">
 					<a class="nav-link text-white " href="{% url 'sitemap:services' %}">Service</a>
 				</li>
 
-				<li class="nav-item">
+				<li class="nav-item {% if request.path == '/track'%}active-danger{% endif %}">
 					<a class="nav-link text-white " href="{% url 'sitemap:track_parcel' %}">Track</a>
 				</li>
 
-				<li class="nav-item">
+				<li class="nav-item {% if request.path == '/contact'%}active-danger{% endif %}">
 					<a class="nav-link text-white " href="{% url 'sitemap:contact' %}">Contact</a>
 				</li>
 				{% if user.is_authenticated %}
