@@ -1,7 +1,11 @@
 $(document).ready(function(){
+	
 	feather.replace();
+	
 	$('.toast').toast('show');
-	$('#carousel-promo').carousel();
+	
+	//$('#carousel-promo').carousel();
+	
 	$("#register_btn").attr('disabled','');
 	/*$("#register_btn").on('click', function(){
 		alert('Hey! Stop clicking me');
@@ -17,4 +21,10 @@ $(document).ready(function(){
 
   	});
 
+  	$('#sidebarCollapse').on('click', function () {
+        $('#sidebar').toggleClass('active');
+        $(this).toggleClass('active');
+    });
+
+	$('#upModal').modal();
 });

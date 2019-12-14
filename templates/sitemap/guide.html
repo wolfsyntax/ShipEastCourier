@@ -10,8 +10,12 @@
 
 {% endblock %}
 
+{% block header %}
+    {% include 'includes/header.html' %}
+{% endblock %}
+
 {% block content %}
-{% include 'includes/header.html' %}
+
 <div class="container-fluid content-body">
 	<div class="row vh-75">
 		<div class="col my-auto">

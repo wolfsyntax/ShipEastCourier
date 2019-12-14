@@ -10,12 +10,46 @@
 
 {% endblock %}
 
+{% block header %}
+    {% include 'includes/header.html' %}
+{% endblock %}
+
 {% block content %}
-{% include 'includes/header.html' %}
+
 <div class="container-fluid content-body">
 	<div class="row vh-75">
 		<div class="col my-auto">
-			CONTACT
+			<section class="container">
+				<div class="row">		
+					<div class="col-lg-4 text-center my-5 my-lg-0">
+						<span class="my-5">
+							<i class="fa fa-map-o contact icon-box" ></i>
+						</span>
+						<h3 class="mt-4">Location</h3>
+						<p>Shop 7 Haiks Plaza<br/>Queen Street, Morant Bay</p>
+					</div>
+					
+					<div class="col-lg-4 text-center my-5 my-lg-0">
+						<span class="my-5">
+							<i class="fa fa-phone contact icon-box"></i>
+						</span>
+						<h3 class="mt-4">Call Us</h3>
+						<p>+1 (876) 891 2375</p>
+					</div>
+					
+					<div class="col-lg-4 text-center my-5 my-lg-0">
+						
+						<span class="my-5">
+							<i class="fa fa-envelope-o contact icon-box"></i>
+						</span>
+
+						<h3 class="mt-4">Email Us</h3>
+						<p>support@shipeastcouriers.com</p>
+					</div>
+
+				</div>		
+					
+			</section>
 		</div>
 	</div>
 </div>

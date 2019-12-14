@@ -1,7 +1,7 @@
 <header class="">
 	<nav class="row mt-2 mx-0 p-0">
 		<div class="col-12 col-md-4 col-lg-3 text-center text-lg-left">
-			 <a href="{% url 'sitemap:home' %}" class="justify-content-center">
+			<a href="{% url 'sitemap:home' %}" class="justify-content-center">
 				<img src="/static/media/plane.png" height="" width="200" class="img-responsive" alt="logo">
 			</a>
 		</div>
@@ -16,8 +16,8 @@
 								</div>
 								<span class="icon-box-label">
 									<strong >Email</strong><br/>
-									<a href="mailto:shipeast85@gmail.com" class="plain text-dark ml-4 mt-3">
-					            		<span>shipeast85@gmail.com</span>
+									<a href="mailto:support@shipeastcouriers.com" class="plain text-dark ml-4 mt-3">
+					            		<span>support@shipeastcouriers.com</span>
 					          		</a>
 								</span>
 							</a>
@@ -45,12 +45,18 @@
 		<div class="col-12 col-md-4 col-lg-3">
 			<div class="container-fluid mt-2">
 				<div class="row mt-4 my-md-0">
+				{% if user.is_anonymous %}
       				<div class="col">
 						<a href="{% url 'login' %}" class="btn btn-outline-danger rounded-0 text-uppercase font-weight-bold w-100 mt-2">Log In</a>
 					</div>
 					<div class="col">
 						<a href="{% url 'account:signup' %}" class="btn btn-outline-danger rounded-0 text-uppercase font-weight-bold w-100 mt-2">Sign up</a>
 					</div>
+				{% else %}
+      				<div class="col">
+						<a href="{% url 'logout' %}" class="btn btn-outline-danger rounded-0 text-uppercase font-weight-bold w-100 mt-2">Logout</a>
+					</div>
+				{% endif %}
 				</div>
 			</div>
 		</div>
@@ -89,7 +95,11 @@
 				<li class="nav-item">
 					<a class="nav-link text-white " href="{% url 'sitemap:contact' %}">Contact</a>
 				</li>
-
+				{% if user.is_authenticated %}
+				<li class="nav-item">
+					<a class="nav-link text-white " href="{% url 'account:dashboard' %}">Dashboard</a>
+				</li>
+				{% endif %}
 			</ul>
     
   		</div>

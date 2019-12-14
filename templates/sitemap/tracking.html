@@ -10,15 +10,19 @@
 
 {% endblock %}
 
+{% block header %}
+    {% include 'includes/header.html' %}
+{% endblock %}
+
 {% block content %}
-{% include 'includes/header.html' %}
+
 <div class="container-fluid">
 	
 	<div class="row" style="height: 75vh;">
 		<div class="col-12 col-md-6 offset-md-3 col-lg-4 offset-lg-4 my-auto">
 			<section class="my-3">
 				<h5 class="">Track your parcel</h5>
-				<small>{% lorem 10 w %}</small>
+				<small>Start tracking your parcel by entering your tracking ID in the box above.</small>
 			</section>
 			<form method="post">
 				{% csrf_token %}

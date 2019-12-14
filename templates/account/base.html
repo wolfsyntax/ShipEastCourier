@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="wrapper">
+        <!-- Sidebar  -->
+        {% block sidebar %}{% endblock %}
+        <!-- Page Content  -->
+        <div id="content" class="p-0">
+
+            {% block autheader %}{% endblock %}
+            <section class="mt-3 mx-2 p-0 px-lg-2 py-lg-3">
+                {% block wrapper %}{% endblock %}
+            </section>
+        </div>
+    </div>
+{% endblock %}

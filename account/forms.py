@@ -61,3 +61,12 @@ class RegistrationForm(forms.ModelForm):
 class TrackingForm(forms.Form):
 	
 	trackcode = forms.CharField(max_length=50)
+
+class ProfileForm(forms.ModelForm):
+	
+	description = forms.CharField(max_length=254, widget=forms.Textarea(attrs={'rows':"3", 'cols':"140", 'resize':"none"}))
+	address = forms.CharField(max_length=254)
+	date_of_birth = forms.DateField(input_formats=['%Y-%m-%d'],help_text='', widget=forms.DateInput(attrs={'class':'form-control','required':"", 'type': 'date',}))
+	class Meta:
+		model = Profile
+		fields=['date_of_birth', 'address', 'parish', 'description', 'photo', ]
