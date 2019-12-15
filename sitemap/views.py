@@ -15,8 +15,8 @@ class ContactView(TemplateView):
 	template_name = 'sitemap/contact.html'
 	#send_mail('Test','This is a sample mail','support@shipeastcouriers.com',['jaysonalpe@gmail.com'])
 	
-	#def get(self, request):
-	#	send_mail('Subject here', 'Here is the message.', 'support@shipeastcouriers.com', ['jaysonalpe@gmail.com'])#, fail_silently=False)
+	def get(self, request):
+		send_mail('Subject here', 'Here is the message.', 'support@shipeastcouriers.com', ['jaysonalpe@gmail.com'])#, fail_silently=False)
 
 class FAQView(TemplateView):
 	template_name = 'sitemap/faq.html'
