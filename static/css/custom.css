@@ -348,7 +348,7 @@ ul.components li {
 ----------------------------------------------------- */
 
 @media (max-width: 768px) {
-
+    
     #sidebar {
         min-width: 250px;
         max-width: 250px;

@@ -14,9 +14,14 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+
 from django.urls import path, include
-from django.conf.urls import url
+
+from django.conf import settings
+from django.conf.urls import url, handler400, handler403, handler404, handler500 
+
 from django.views.generic import TemplateView
+from django.views.static import serve
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,3 +30,15 @@ urlpatterns = [
     url(r'^',include('django.contrib.auth.urls')),
     url(r'^test$',TemplateView.as_view(template_name="account/customer/index.html"), name="Test_App"),
 ]
+
+if not settings.DEBUG:
+
+    urlpatterns += [
+        url(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),
+        url(r'^static/(?P<path>.*)$', serve, {'document_root': settings.STATIC_ROOT}),
+    ]
+
+handler400 = 'sitemap.views.bad_request'
+handler403 = 'sitemap.views.permission_denied' 
+handler404 = 'sitemap.views.not_found' 
+handler500 = 'sitemap.views.server_error' 

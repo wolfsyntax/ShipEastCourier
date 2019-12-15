@@ -48,3 +48,16 @@ class TrackParcelView(TemplateView):
 			print("\n\n\n\n\nTracking Code:\n{}-1\n\n\n".format(kwargs['tracking_code']))
 
 		return context
+
+def bad_request(request,exception):
+	return render(request, 'errors/bad_request.html')		
+
+def permission_denied(request,exception):
+	return render(request, 'errors/permission_denied.html')		
+
+def not_found(request,exception):
+	return render(request, 'errors/not_found.html')		
+
+def server_error(request):
+	return render(request, 'errors/server_error.html')		
+

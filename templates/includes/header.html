@@ -1,15 +1,16 @@
+{% load static %}
 <header class="">
 	<nav class="row mt-2 mx-0 p-0">
-		<div class="col-12 col-md-4 col-lg-3 text-center text-lg-left">
+		<div class="col-12 col-md-5 col-lg-4 col-xl-3 text-center text-lg-left pt-4 py-lg-0">
 			<a href="{% url 'sitemap:home' %}" class="justify-content-center">
-				<img src="/static/media/plane.png" height="" width="200" class="img-responsive" alt="logo">
+				<img src="media/plane.png" height="" width="200" class="img-responsive" alt="logo">
 			</a>
 		</div>
-		<div class="col-12 col-md-4 col-lg-6 justify-content-center justify-content-lg-start d-flex mt-2 px-5 px-lg-0">
+		<div class="col-12 col-md-7 col-lg-8 col-xl-6 justify-content-center justify-content-lg-start d-flex mt-2 px-5 px-lg-0">
 			<div class="container-fluid mt-2">
 				<div class="row">
-					<div class="col-12 col-lg-6">
-						<section class="row my-2 my-md-0">
+					<div class="col-12 col-lg-6 my-2 my-md-4 my-xl-0">
+						<section class="row mt-3 my-md-0">
 							<a href="" class="d-inline-block plain">
 								<div class="icon-box-container">
 									<i class="fa fa-envelope-o"></i>
@@ -23,8 +24,8 @@
 							</a>
 						</section>
 					</div>
-					<div class="col-12 col-lg-6 my-2 my-md-0">
-						<section class="row mt-2 my-md-0">
+					<div class="col-12 col-lg-6 my-2 my-md-4 my-xl-0">
+						<section class="row mt-0 my-md-0">
 							<a href="" class="d-inline-block plain">
 								<div class="icon-box-container">
 									<i class="fa fa-phone"></i>
@@ -42,7 +43,7 @@
 			</div>
 		</div>
 
-		<div class="col-12 col-md-4 col-lg-3">
+		<div class="col-12 col-xl-3">
 			<div class="container-fluid mt-2">
 				<div class="row mt-4 my-md-0">
 				{% if user.is_anonymous %}
