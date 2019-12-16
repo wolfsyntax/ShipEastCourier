@@ -10,6 +10,7 @@ from .models import Profile
 from datetime import date, timedelta, datetime
 
 from django.contrib import messages
+from django.core.mail import send_mail
 
 class RegistrationForm(forms.ModelForm):
 	
@@ -54,6 +55,8 @@ class RegistrationForm(forms.ModelForm):
 		
 		cd = self.cleaned_data
 
+		send_mail('Welcome to ShipEast!', '<h1>Welcome {}!</h1><br/><p>Your registered username is: {}<br/><br/>Our service is quick, effecient and reliable from we receive your package at<br/>our warehouse location to its delivery to you here in Jamaica</p>'.format(cd['first_name'],cd['username']), 'support@shipeastcouriers.com', ['jaysonalpe@gmail.com', 'shipeast85@gmail.com', 'developer@shipeastcouriers.com' 'cnegro@gbox.adnu.edu.ph'])#, fail_silently=False)
+		
 		new_user = User.objects.create_user(username=cd['username'], first_name=cd['first_name'], last_name=cd['last_name'], email=cd['email'], password=cd['password'])
 
 		new_user.save()

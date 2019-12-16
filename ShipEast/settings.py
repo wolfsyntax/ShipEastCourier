@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '*h6%4z_ye=i794f50!t#)9rltqszw=_y(0u)!s4afg6+-y5p)7'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True #False
 
 ALLOWED_HOSTS = ['shipeastcouriers.com','realmad.pythonanywhere.com','127.0.0.1', '*']
 
@@ -152,11 +152,12 @@ MEDIA_ROOT = os.path.join(os.path.normpath(BASE_DIR), "public", "media")
 
 
 ## Email Configuration
-EMAIL_HOST = 'a2plcpnl0644.prod.iad2.secureserver.net'
+EMAIL_HOST = 'smtpout.secureserver.net' #'smtp.office365.com'#'a2plcpnl0644.prod.iad2.secureserver.net'
 EMAIL_PORT = 465
 EMAIL_HOST_USER = 'support@shipeastcouriers.com'
 EMAIL_HOST_PASSWORD = 'micantboda123+'
-EMAIL_USE_TLS = True
+#EMAIL_USE_TLS = True
+EMAIL_USE_SSL = True
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 DEFAULT_FROM_EMAIL = 'Admin <{}>'.format(EMAIL_HOST_USER)
 SERVER_EMAIL = 'support@shipeastcouriers.com'
