@@ -23,7 +23,7 @@ class RegisterView(TemplateView):
 
 			messages.add_message(request, messages.SUCCESS, "Account has been created successfully!!!")
 
-			return HttpResponseRedirect('/login?next=/')
+			return HttpResponseRedirect('/login/?next=/')
 
 		else:
 
