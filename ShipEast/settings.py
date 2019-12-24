@@ -83,8 +83,8 @@ DATABASES = {
         'NAME':  'ship_east', # 'realmad', ship_east',#os.path.join(BASE_DIR, 'db.sqlite3'), #
         'USER': 'Scully',#'shipeast_db',
         'PASSWORD': 'micantboda123+', #'micantboda123',
-        'HOST': 'Scully.mysql.pythonanywhere-services.com',
-        'PORT': 2083,
+        'HOST': 'localhost',
+        #'PORT': 2083,
     }
 #    'server': {
 #
