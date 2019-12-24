@@ -81,9 +81,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',#'django.db.backends.sqlite3',#'django.db.backends.mysql',#
         'NAME':  'ship_east', # 'realmad', ship_east',#os.path.join(BASE_DIR, 'db.sqlite3'), #
-        'USER': 'shipeast_db',
-        'PASSWORD': 'micantboda123', #'micantboda123',
-        #'HOST': 'realmad.mysql.pythonanywhere-services.com',
+        'USER': 'cpses_kf20h8m6sz',#'shipeast_db',
+        'PASSWORD': '', #'micantboda123',
+        'HOST': 'a2plcpnl0644.prod.iad2.secureserver.net',
+        'PORT': 2083,
     }
 #    'server': {
 #
