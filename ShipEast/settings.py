@@ -82,7 +82,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',#'django.db.backends.sqlite3',#'django.db.backends.mysql',#
         'NAME':  'Scully$default', # 'realmad', ship_east',#os.path.join(BASE_DIR, 'db.sqlite3'), #
         'USER': 'shipeast_db',#'Scully', 'shipeast_db',
-        'PASSWORD': 'micantboda123+', #'micantboda123',
+        'PASSWORD': '', #'micantboda123',
         'HOST': 'Scully.mysql.pythonanywhere-services.com',#'localhost',# 'Scully.mysql.pythonanywhere-services.com',
         'PORT': 3306,
     }
