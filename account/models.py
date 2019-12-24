@@ -1,6 +1,7 @@
 from django.db import models
 
 # Create your models here.
+from django.core.mail import send_mail
 from django.contrib.auth.models import User
 
 PARISH = (
@@ -38,3 +39,38 @@ class Profile(models.Model):
         db_table='Profile'
 
 
+class MailClient(models.Model):
+
+    subject = models.CharField(max_length=255)
+    message = models.TextField()
+    attachment = models.FileField(null=True, blank=True)
+    users = models.ManyToManyField(User, blank=False)
+
+    send_it = models.BooleanField(default=False) #check it if you want to send your email
+    
+    def __str__(self):
+        return self.subject
+
+    def save(self):
+       
+    
+    #    print("\n\nSubject: {}\n\n\n\n\n".format(self.users))
+        super(MailClient, self).save() 
+        
+        if self.send_it:
+            #First you create your list of users
+            user_list = []
+
+            #print("\n\n\n\nEmail Client\n\n\n{}\n\n\n\n".format(self.users.length))
+            
+            for u in self.users.all():
+                user_list.append(u.email)
+    
+            send_mail(str(self.subject), str(self.message), 'info@shipeastcouriers.com', user_list, fail_silently=False)
+            
+        
+
+#    class Meta:
+        
+#        verbose_name = "Emails to send"
+#        verbose_name_plural = "Emails to send"

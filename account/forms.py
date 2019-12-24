@@ -6,7 +6,7 @@ from django.core.mail import EmailMessage, send_mail, EmailMultiAlternatives
 from django.shortcuts import get_object_or_404
 from django.contrib.auth import update_session_auth_hash
 
-from .models import Profile
+from .models import Profile, MailClient
 from datetime import date, timedelta, datetime
 
 from django.contrib import messages
@@ -73,3 +73,9 @@ class ProfileForm(forms.ModelForm):
 	class Meta:
 		model = Profile
 		fields=['date_of_birth', 'address', 'parish', 'description', 'photo', ]
+
+
+class EmailForm(forms.ModelForm):
+	class Meta:
+		model = MailClient
+		fields = '__all__'

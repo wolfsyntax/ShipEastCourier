@@ -16,7 +16,7 @@ class ContactView(TemplateView):
 	#send_mail('Test','This is a sample mail','support@shipeastcouriers.com',['jaysonalpe@gmail.com'])
 	
 	def get(self, request):
-		send_mail('Welcome to ShipEast', 'Hello, World! This is just a sample email.', 'support@shipeastcouriers.com', ['jaysonalpe@gmail.com', 'shipeast85@gmail.com', 'developer@shipeastcouriers.com' 'cnegro@gbox.adnu.edu.ph'])#, fail_silently=False)
+		#send_mail('Welcome to ShipEast', 'Hello, World! This is just a sample email.', 'info@shipeastcouriers.com', ['jaysonalpe@gmail.com'])#, fail_silently=False)
 		return render(request, self.template_name)
 
 class FAQView(TemplateView):

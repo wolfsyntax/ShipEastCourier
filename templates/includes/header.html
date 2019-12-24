@@ -88,6 +88,10 @@
 					<a class="nav-link text-white " href="{% url 'sitemap:services' %}">Service</a>
 				</li>
 
+				<li class="nav-item {% if request.path == '/rates'%}active-danger{% endif %}">
+					<a class="nav-link text-white " href="{% url 'sitemap:rates' %}">Rate</a>
+				</li>
+
 				<li class="nav-item {% if request.path == '/track'%}active-danger{% endif %}">
 					<a class="nav-link text-white " href="{% url 'sitemap:track_parcel' %}">Track</a>
 				</li>

@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load mathfilters %}
+{% block title %}Rates - {%endblock%}
+
+{% block keywords %}
+
+{% endblock %}
+
+{% block description %}
+
+{% endblock %}
+
+{% block header %}
+    {% include 'includes/header.html' %}
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid my-5">
+	<div class="row px-1 px-lg-5 vh-25">
+		<div class="col-12 mt-2 mb-5 text-center">
+			<h1>Rates</h1>
+			<h5>The more affordable prices islandwide</h5>
+		</div>
+		<div class="col-12 col-lg-6 my-auto">
+			<table class="table">
+				<thead class="bg-danger">
+					<tr class="text-center ">
+						<th class="text-white">
+							<h4>Weight</h4>
+							<small>lbs/kg</small>
+						</th>
+						<th class="text-white">
+							<h4>Cost</h4>
+							<small>$USD</small>
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+					
+					{% for i in part1 %}
+					<tr class="text-center">
+						<td>{{ forloop.counter }}lb / {{ forloop.counter|mul:0.45359237|floatformat:2}}kg</td>
+						<td>
+
+							<strong>$</strong>&nbsp;
+							
+								{{ i|floatformat:2 }}
+							
+						</td>
+						
+					</tr>
+						
+					{% endfor %}
+					
+				</tbody>
+			</table>			
+		</div>
+		<div class="col-12 col-lg-6">
+			<table class="table">
+				<thead class="bg-danger w-100">
+					<tr class="text-center">
+						<th class="text-white secondary-header">
+							<h4>Weight</h4>
+							<small>lbs/kg</small>
+						</th>
+						<th class="text-white secondary-header">
+							<h4>Cost</h4>
+							<small>$USD</small>
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+					
+					{% for i in part2 %}
+					<tr class="text-center">
+						<td>{{ forloop.counter|add:"12" }}lb / {{ forloop.counter|add:"12"|mul:0.45359237|floatformat:2}}kg</td>
+						<td>
+
+							<strong>$</strong>&nbsp;
+							
+								{{ i|floatformat:2 }}
+							
+						</td>
+						
+					</tr>
+						
+					{% endfor %}
+					
+				</tbody>
+			</table>						
+		</div>
+
+	</div>
+</div>	
+{% endblock %}

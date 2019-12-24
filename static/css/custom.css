@@ -331,6 +331,11 @@ a.article:hover {
 ul.components li {
     padding: 0 !important;
 }
+
+ .secondary-header {
+    display: none !important;
+ }
+
 /* ---------------------------------------------------
     CONTENT STYLE
 ----------------------------------------------------- */
@@ -346,7 +351,12 @@ ul.components li {
 /* ---------------------------------------------------
     MEDIAQUERIES
 ----------------------------------------------------- */
+@media (min-width: 768px) {
+    .secondary-header {
+        display: table-cell !important;
+    }
 
+}
 @media (max-width: 768px) {
     
     #sidebar {
@@ -398,4 +408,7 @@ ul.components li {
     #sidebarCollapse span {
         display: none;
     }
+
 }
+
+
