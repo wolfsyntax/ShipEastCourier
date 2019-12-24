@@ -79,11 +79,11 @@ WSGI_APPLICATION = 'ShipEast.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',#'django.db.backends.sqlite3',#'django.db.backends.mysql',#
-        'NAME':  os.path.join(BASE_DIR, 'db.sqlite3'), # 'realmad', ship_east',#os.path.join(BASE_DIR, 'db.sqlite3'), #
-        #'USER': 'root',#'Scully', 'shipeast_db',
-        #'PASSWORD': '', #'micantboda123',
-        #'HOST': 'localhost',
+        'ENGINE': 'django.db.backends.mysql',#'django.db.backends.sqlite3',#'django.db.backends.mysql',#
+        'NAME':  'ship_east', # 'realmad', ship_east',#os.path.join(BASE_DIR, 'db.sqlite3'), #
+        'USER': 'Scully',#'Scully', 'shipeast_db',
+        'PASSWORD': 'micantboda123+', #'micantboda123',
+        'HOST': 'Scully.mysql.pythonanywhere-services.com',
         #'PORT': 2083,
     }
 #    'server': {
@@ -155,13 +155,13 @@ MEDIA_ROOT = os.path.join(os.path.normpath(BASE_DIR), "public", "media")
 ## Email Configuration
 EMAIL_HOST = 'smtpout.secureserver.net' #'smtp.office365.com'#'a2plcpnl0644.prod.iad2.secureserver.net'
 EMAIL_PORT = 465
-EMAIL_HOST_USER = 'info@shipeastcouriers.com'
+EMAIL_HOST_USER = 'support@shipeastcouriers.com'
 EMAIL_HOST_PASSWORD = 'micantboda123+'
 #EMAIL_USE_TLS = True
 EMAIL_USE_SSL = True
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 DEFAULT_FROM_EMAIL = 'Admin <{}>'.format(EMAIL_HOST_USER)
-SERVER_EMAIL = 'info@shipeastcouriers.com'
+SERVER_EMAIL = 'support@shipeastcouriers.com'
 
 # Session and Security
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
