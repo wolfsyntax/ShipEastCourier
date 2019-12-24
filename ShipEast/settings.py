@@ -172,8 +172,8 @@ PASSWORD_RESET_TIMEOUT_DAYS = 1
 
 # Authentication
 LOGIN_URL = '/login/'
-LOGIN_REDIRECT_URL = ""
-LOGOUT_REDIRECT_URL = ""
+LOGIN_REDIRECT_URL = "/"
+LOGOUT_REDIRECT_URL = "/"
 
 from django.contrib import messages
 
