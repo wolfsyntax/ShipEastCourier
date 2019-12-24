@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '*h6%4z_ye=i794f50!t#)9rltqszw=_y(0u)!s4afg6+-y5p)7'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 ALLOWED_HOSTS = ['shipeastcouriers.com','realmad.pythonanywhere.com','127.0.0.1', '*']
 
 
@@ -83,7 +83,7 @@ DATABASES = {
         'NAME':  'ship_east', # 'realmad', ship_east',#os.path.join(BASE_DIR, 'db.sqlite3'), #
         'USER': 'shipeast_db',#'Scully', 'shipeast_db',
         'PASSWORD': 'micantboda123+', #'micantboda123',
-        'HOST': '110.54.239.101',#'localhost',# 'Scully.mysql.pythonanywhere-services.com',
+        'HOST': 'localhost',#'localhost',# 'Scully.mysql.pythonanywhere-services.com',
         'PORT': 3306,
     }
 #    'server': {
