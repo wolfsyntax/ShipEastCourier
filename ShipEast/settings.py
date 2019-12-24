@@ -80,7 +80,7 @@ WSGI_APPLICATION = 'ShipEast.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',#'django.db.backends.sqlite3',#'django.db.backends.mysql',#
-        'NAME':  'ship_east', # 'realmad', ship_east',#os.path.join(BASE_DIR, 'db.sqlite3'), #
+        'NAME':  'Scully$ship_east', # 'realmad', ship_east',#os.path.join(BASE_DIR, 'db.sqlite3'), #
         'USER': 'shipeast_db',#'Scully', 'shipeast_db',
         'PASSWORD': 'micantboda123+', #'micantboda123',
         'HOST': 'localhost',#'localhost',# 'Scully.mysql.pythonanywhere-services.com',
