@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '*h6%4z_ye=i794f50!t#)9rltqszw=_y(0u)!s4afg6+-y5p)7'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 ALLOWED_HOSTS = ['shipeastcouriers.com','realmad.pythonanywhere.com','127.0.0.1', '*']
 
 
@@ -81,9 +81,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',#'django.db.backends.sqlite3',#'django.db.backends.mysql',#
         'NAME':  'ship_east', # 'realmad', ship_east',#os.path.join(BASE_DIR, 'db.sqlite3'), #
-        'USER': 'cpses_kf20h8m6sz',#'shipeast_db',
-        'PASSWORD': '', #'micantboda123',
-        'HOST': 'a2plcpnl0644.prod.iad2.secureserver.net',
+        'USER': 'Scully',#'shipeast_db',
+        'PASSWORD': 'micantboda123+', #'micantboda123',
+        'HOST': 'Scully.mysql.pythonanywhere-services.com',
         'PORT': 2083,
     }
 #    'server': {
