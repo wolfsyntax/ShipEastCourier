@@ -28,7 +28,7 @@
 				{% csrf_token %}
 				<div class="form-group">
 					<div class="input-group">
-						<input name="trackcode" class="form-control" type="text" value="" placeholder="Enter your tracking ID">
+						<input name="tracking_code" class="form-control" type="text" value="{{ track_no }}" placeholder="Enter your tracking ID">
 						<div class="input-group-append">
 							<button type="submit" class="btn btn-outline-danger btn-sm">
 								<i data-feather="search"></i>
@@ -37,6 +37,27 @@
 					</div>
 				</div>
 			</form>
+
+			<section class="mt-5">
+				
+					{% for trackinfo in itrack %}
+						Latest status: <p>
+						{% if trackinfo.parcel_status == 'pickup' %}
+							{{ trackinfo.date_shipped }}&emsp;&emsp;Picked Up by  {{ trackinfo.courier }}
+						{% elif  trackinfo.parcel_status == 'on process' %}
+							Your Parcel is in transit
+						{% elif  trackinfo.parcel_status == 'on delivery' %}
+							We will deliver your package
+						{% endif %}
+						</p>
+					{% empty %}
+						{% if trackno %}
+						We could not find your parcel. The tracking ID is invalid. Please check if you entered the tracking ID correctly.
+						{% endif %}
+
+					{% endfor %}
+	
+			</section>
 		</div>
 	</div>
 </div>

@@ -1,3 +1,5 @@
 @import url('bootstrap.min.css');
 @import url('custom.css');
 @import url('../plugins/css/font-awesome.min.css');
+@import url('../plugins/css/dataTables.bootstrap4.min.css');
+@import url('../plugins/css/jquery.dataTables.min.css');

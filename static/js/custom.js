@@ -1,7 +1,8 @@
 $(document).ready(function(){
 	
 	feather.replace();
-	
+	$('#trx_data').DataTable();
+
 	$('.toast').toast('show');
 	
 	//$('#carousel-promo').carousel();
@@ -21,10 +22,18 @@ $(document).ready(function(){
 
   	});
 
+
+
   	$('#sidebarCollapse').on('click', function () {
         $('#sidebar').toggleClass('active');
         $(this).toggleClass('active');
     });
 
 	$('#upModal').modal();
+
+	$("#officeHoursToggler").on('click',function(){
+		$('#officeHours').modal();
+	});
+
+	
 });

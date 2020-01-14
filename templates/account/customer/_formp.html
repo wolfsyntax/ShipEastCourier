@@ -1,2 +1,86 @@
-{% load crispy_forms_tags %}
-{{form|crispy}}
+<div id="div_id_user" class="form-group">
+	<div class="">
+		<input type="hidden" name="{{ request.user.id }}" class="numberinput form-control" required id="id_user">
+	</div>
+</div>
+
+<div id="div_id_date_of_birth" class="form-group">
+	<label for="id_date_of_birth" class="col-form-label  requiredField">
+		Date of birth<span class="asteriskField">*</span>
+	</label>
+
+	<div class="">
+		<input type="date" name="date_of_birth" class="form-control dateinput form-control" required id="id_date_of_birth">
+	</div>
+</div>
+
+
+<div id="div_id_trn" class="form-group">
+	<label for="id_trn" class="col-form-label  requiredField">
+		Trn<span class="asteriskField">*</span>
+	</label>
+
+	<div class="">
+		<input type="text" name="trn" maxlength="10" class="textinput textInput form-control" required id="id_trn">
+	</div>
+</div>
+
+<div id="div_id_address" class="form-group">
+	<label for="id_address" class="col-form-label  requiredField">
+		Address<span class="asteriskField">*</span>
+	</label>
+
+	<div class="">
+		<input type="text" name="address" maxlength="254" class="textinput textInput form-control" required id="id_address">
+	</div>
+</div>
+
+<div id="div_id_district" class="form-group">
+	<label for="id_district" class="col-form-label  requiredField">
+		District<span class="asteriskField">*</span>
+	</label>
+
+	<div class="">
+		<input type="text" name="district" maxlength="254" class="textinput textInput form-control" required id="id_district">
+	</div>
+</div>
+
+<div id="div_id_parish" class="form-group">
+	<label for="id_parish" class="col-form-label  requiredField">
+		Parish<span class="asteriskField">*</span>
+	</label>
+
+	<div class="">
+		<select name="parish" class="select form-control" required id="id_parish">
+			<option value="" selected>Choose...</option>
+			<option value="St. Andrew">Kingston</option>
+			<option value="Portland">St. Thomas</option>
+			<option value="St. Catherine">St. Mary</option>
+			<option value="St. Ann">Manchester</option>
+			<option value="Clarendon">Hanover</option>
+			<option value="Westmoreland">St. James</option>
+			<option value="Trelawny">St. Elizabeth</option>
+
+		</select>
+	</div>
+</div>
+
+<div id="div_id_description" class="form-group">
+	<label for="id_description" class="col-form-label  requiredField">
+		Description<span class="asteriskField">*</span>
+	</label>
+
+	<div class="">
+		<textarea name="description" cols="140" rows="3" resize="none" maxlength="254" class="textarea form-control" required id="id_description"></textarea>
+	</div>
+</div>
+
+<div id="div_id_photo" class="form-group">
+	<label for="id_photo" class="col-form-label  requiredField">
+		Photo<span class="asteriskField">*</span>
+	</label>
+
+	<div class="">
+		<input type="file" name="photo" accept="image/*" class="clearablefileinput" required id="id_photo">
+	</div>
+</div>

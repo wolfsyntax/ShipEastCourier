@@ -15,6 +15,15 @@ PARISH = (
     ('Trelawny', 'St. Elizabeth')
 )
 
+PARCEL_STATUS = (
+    ('', 'Parcel Status'),
+    ('pickup', 'Pickup'),
+    ('on process', 'On Process'),
+    ('on delivery', 'On Delivery'),
+    ('delivered', 'Delivered'),
+    
+
+)
 class Profile(models.Model):
 
     user = models.OneToOneField(User, on_delete=models.CASCADE)
@@ -35,9 +44,14 @@ class Profile(models.Model):
     def __str__(self):
         return '{} {}'.format(self.user.first_name, self.user.last_name)
 
+    def save(self, *args, **kwargs): 
+        #self.slug = slugify(self.title) 
+        super(Profile, self).save(*args, **kwargs) 
+
     class Meta:
         db_table='Profile'
-
+        verbose_name = "User Profile"
+        verbose_name_plural = "Users Profile"
 
 class MailClient(models.Model):
 
@@ -66,11 +80,37 @@ class MailClient(models.Model):
             for u in self.users.all():
                 user_list.append(u.email)
     
-            send_mail(str(self.subject), str(self.message), 'info@shipeastcouriers.com', user_list, fail_silently=False)
+            send_mail(str(self.subject), str(self.message), 'support@shipeastcouriers.com', user_list, fail_silently=False)
             
         
 
-#    class Meta:
+    class Meta:
         
-#        verbose_name = "Emails to send"
-#        verbose_name_plural = "Emails to send"
+        verbose_name = "Email to send"
+        verbose_name_plural = "Emails to send"
+        db_table='MailClient'
+
+class TrackingDetails(models.Model):
+
+    trackcode = models.SlugField(max_length=32)
+    courier = models.CharField(max_length=255)
+    merchant = models.CharField(max_length=255)
+    item_name = models.CharField(max_length=255)
+    parcel_status = models.CharField(choices=PARCEL_STATUS, max_length=255)
+    
+    parcel_price = models.FloatField()
+    shipping_fee = models.FloatField()
+    
+    date_shipped = models.DateTimeField()
+    date_arrived = models.DateTimeField(null=True, blank=True) 
+    
+    user = models.ForeignKey(User,on_delete=models.CASCADE) 
+
+
+    def __str__(self):
+        return "{}:{}".format(self.courier, self.trackcode)
+
+    class Meta:
+        verbose_name = "Tracking Detail"
+        verbose_name_plural = "Tracking Details"
+        db_table='TrackingDetails'

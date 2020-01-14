@@ -4,6 +4,7 @@ from django.views.generic import TemplateView, CreateView, UpdateView, ListView,
 from django.core.mail import send_mail
 
 from account.forms import TrackingForm
+from account.models import TrackingDetails
 
 class HomeView(TemplateView):
 	template_name = 'sitemap/index.html'
@@ -34,9 +35,9 @@ class TrackParcelView(TemplateView):
 		
 		form = self.form_class(request.POST)
 		if form.is_valid():
-			print("\n\n\n\nTrackParcel\nTracking Code: {}\n\n".format(request.POST['trackcode']))
+			#print("\n\n\n\nTrackParcel\nTracking Code: {}\n\n".format(request.POST['tracking_code']))
 			
-			return HttpResponseRedirect("/track/{}".format(request.POST['trackcode']))
+			return HttpResponseRedirect("/track/{}".format(request.POST['tracking_code']))
 
 		return HttpResponseRedirect("/track")
 
@@ -44,9 +45,19 @@ class TrackParcelView(TemplateView):
 
 		context = super().get_context_data(**kwargs)
 		
+		context['track_no'] = ""
+
 		if(kwargs):
+
+			try:
+				context['itrack'] = TrackingDetails.objects.filter(trackcode=kwargs['tracking_code'])
+			except TrackingDetails.DoesNotExist:
+				pass
+
+			#print("\n\n\n\n\nTracking Code:\n{}-1\n\n\n".format(kwargs['tracking_code']))
+			context['track_no'] = kwargs['tracking_code']
 		
-			print("\n\n\n\n\nTracking Code:\n{}-1\n\n\n".format(kwargs['tracking_code']))
+
 
 		return context
 

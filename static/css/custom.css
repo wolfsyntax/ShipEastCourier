@@ -412,3 +412,18 @@ ul.components li {
 }
 
 
+.row .col-sm-6 .dataTables_length,.row .col-sm-6 .dataTables_filter {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.dataTables_length select::after {
+    content: "" !important;
+    position: relative !important;
+    margin-left: 60px !important;
+}
+
+.dataTables_length select {
+    position: relative !important;
+    margin-left: 20px !important;
+}

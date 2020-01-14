@@ -20,6 +20,38 @@
 	<div class="row vh-75">
 		<div class="col my-auto">
 			<section class="container">
+				
+				<div class="row">
+					<div class="modal" id="officeHours" tabindex="-1" role="dialog">
+					  <div class="modal-dialog" role="document">
+					    <div class="modal-content">
+					      <div class="modal-header">
+					        <h5 class="modal-title">Business Hours</h5>
+					        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					          <span aria-hidden="true">&times;</span>
+					        </button>
+					      </div>
+					      <div class="modal-body">
+					        <table class="table table-borderless">
+					        	<tr class="my-0">
+									<th class="text-left">Mon-Wed</th>
+									<td>10am - 6pm</td>
+								</tr>
+								<tr class="my-0">
+									<th class="text-left">Fri</th>
+									<td>11am - 7pm</td>
+								</tr>
+								<tr class="my-0">
+									<th class="text-left">Sat</th>
+									<td>11am - 8pm</td>
+								</tr>
+					        </table>
+					      </div>
+					    </div>
+					  </div>
+					</div>					
+				</div>
+
 				<div class="row">		
 					
 					<div class="col-12 mt-3 mb-5 text-center">
@@ -27,7 +59,7 @@
 						<h5>Contact our main office or find a branch closest to you.</h5>
 					</div>
 
-					<div class="col-lg-4 text-center my-5 my-lg-0">
+					<div class="col-lg-3 text-center my-5 my-lg-0">
 						<span class="my-5">
 							<i class="text-danger fa fa-map-o contact icon-box" ></i>
 						</span>
@@ -35,7 +67,7 @@
 						<p>Shop 7 Haiks Plaza<br/>Queen Street, Morant Bay</p>
 					</div>
 					
-					<div class="col-lg-4 text-center my-5 my-lg-0">
+					<div class="col-lg-3 text-center my-5 my-lg-0">
 						<span class="my-5">
 							<i class="text-danger fa fa-phone contact icon-box"></i>
 						</span>
@@ -43,7 +75,7 @@
 						<p>+1 (876) 891 2375</p>
 					</div>
 					
-					<div class="col-lg-4 text-center my-5 my-lg-0">
+					<div class="col-lg-3 text-center my-5 my-lg-0">
 						
 						<span class="my-5">
 							<i class="text-danger fa fa-envelope-o contact icon-box"></i>
@@ -51,6 +83,26 @@
 
 						<h3 class="mt-4">Email Us</h3>
 						<p>support@shipeastcouriers.com</p>
+					</div>
+
+					<div class="col-lg-3 text-center my-5 my-lg-0">
+						
+						<span class="my-5">
+							<!--i class="text-danger fa fa-business-time contact icon-box"></i-->
+							<i class="text-danger fa fa-building contact icon-box"></i>
+						</span>
+
+						<h3 class="mt-4">Business Hours</h3>
+						<section class="px-4 px-lg-0 container">
+							<div class="row ">
+								<div class="col">
+									<button type="button" data-toggle="modal" data-target="#officeHours" id="officeHoursToggler" class="btn btn-outline-danger text-dark font-weight-bolder">
+										Get Office Hours
+									</button>
+								</div>
+
+							</div>
+						</section>
 					</div>
 
 				</div>		

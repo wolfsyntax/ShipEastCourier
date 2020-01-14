@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '*h6%4z_ye=i794f50!t#)9rltqszw=_y(0u)!s4afg6+-y5p)7'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 ALLOWED_HOSTS = ['shipeastcouriers.com','realmad.pythonanywhere.com','127.0.0.1', '*']
 
 
@@ -80,10 +80,10 @@ WSGI_APPLICATION = 'ShipEast.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',#'django.db.backends.sqlite3',#'django.db.backends.mysql',#
-        'NAME':  'Scully$ship_east', # 'realmad', ship_east',#os.path.join(BASE_DIR, 'db.sqlite3'), #
-        'USER': 'Scully',#'Scully', 'shipeast_db',
-        'PASSWORD': 'micantboda123+', #'micantboda123',
-        'HOST': 'Scully.mysql.pythonanywhere-services.com',#'localhost',# 'Scully.mysql.pythonanywhere-services.com',
+        'NAME':  'ship_east',#'Scully$ship_east', # 'realmad', ship_east',#os.path.join(BASE_DIR, 'db.sqlite3'), #
+        'USER': 'root',#'Scully',#'Scully', 'shipeast_db',
+        'PASSWORD': '',#'micantboda123+', #'micantboda123',
+        'HOST': 'localhost',#'Scully.mysql.pythonanywhere-services.com',#'localhost',# 'Scully.mysql.pythonanywhere-services.com',
         'PORT': 3306,
     }
 #    'server': {
@@ -163,7 +163,7 @@ EMAIL_HOST_PASSWORD = 'micantboda123+'
 EMAIL_USE_SSL = True
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 DEFAULT_FROM_EMAIL = 'Admin <{}>'.format(EMAIL_HOST_USER)
-SERVER_EMAIL = 'support@shipeastcouriers.com'
+#SERVER_EMAIL = 'support@shipeastcouriers.com'
 
 # Session and Security
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
@@ -188,6 +188,8 @@ MESSAGE_TAGS = {
 	messages.ERROR: 'danger',
 }
 
+MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
+
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
-APPEND_SLASH = False
+APPEND_SLASH = True
