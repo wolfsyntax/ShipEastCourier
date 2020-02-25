@@ -34,7 +34,7 @@ cookiecutter
 cryptography
 cssselect2
 defusedxml
-Django==2.2.1
+Django==2.2.10
 django-appconf
 django-autocomplete-light
 django-bitcoin
